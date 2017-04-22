@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toInnerStyle</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="toInnerStyle.js"></script>
+</head>
+<body>
+    <div id="container">
+        将外部css样式写成标签内联样式
+        <div class="first">
+            first-div
+        </div>
+        <div class="second">
+            second-div
+        </div>
+    </div>
+    <button id="btn">转化(打开调试工具再点击可以看到新元素的打印)</button>
+    <script>
+        document.querySelector("#btn").addEventListener("click",function(){
+            var container=document.querySelector("#container");
+            toInnerStyle(container);
+            console.log(container);
+        });
+    </script>
+</body>
+</html>

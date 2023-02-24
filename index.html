@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>toInnerStyle</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <title>toInnerStyle</title>
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div id="container">
-        将外部css样式写成标签内联样式
-        <div class="first">
-            first-div
-        </div>
-        <div class="second">
-            second-div
-        </div>
+  <div id="container">
+    将外部css样式写成标签内联样式
+    <div class="first">
+      first-div
     </div>
-    <button id="btn">转化(打开调试工具再点击可以看到新元素的打印)</button>
-    <script type="module">
-        import toInnerStyle from './toInnerStyle.js';
-        document.querySelector("#btn").addEventListener("click",function(){
-            const container=document.querySelector("#container");
-            const copyContainer = toInnerStyle(container,true);
-            console.log(container.outerHTML);
-        });
-    </script>
+    <div class="second">
+      second-div
+    </div>
+  </div>
+  <div id="noStyle" style="all:initial;"></div>
+  <button id="btn">转化(打开调试工具再点击可以看到新元素的打印)</button>
+  <script type="module">
+    import toInnerStyle from './toInnerStyle.js';
+    document.querySelector("#btn").addEventListener("click", function () {
+      const container = document.querySelector("#container");
+      const copyContainer = toInnerStyle(container, true);
+      console.log(copyContainer.outerHTML);
+      document.querySelector('#noStyle').append(copyContainer);
+    });
+  </script>
 </body>
+
 </html>

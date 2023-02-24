@@ -18,7 +18,7 @@ const supportAll = 'all' in document.documentElement.style;
  * @param {Boolean} copy 是转换自身还是生成一个新的副本进行转换
  * @returns 
  */
-function toInnerStyle(dom, copy = true) {
+export default function toInnerStyle(dom, copy = true) {
   let container;
   let iframe;
   let contentWindow;

@@ -17,11 +17,12 @@
         </div>
     </div>
     <button id="btn">转化(打开调试工具再点击可以看到新元素的打印)</button>
-    <script>
+    <script type="module">
+        import toInnerStyle from './toInnerStyle.js';
         document.querySelector("#btn").addEventListener("click",function(){
-            var container=document.querySelector("#container");
-            toInnerStyle(container);
-            console.log(container);
+            const container=document.querySelector("#container");
+            const copyContainer = toInnerStyle(container,true);
+            console.log(container.outerHTML);
         });
     </script>
 </body>
